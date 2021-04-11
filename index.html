@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="js/jquery-3.5.1.min.js"></script>
+     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"">
+    <title>Abdul Munif</title>
+    <style>
+      body{
+        background-color: teal;
+      }
+      .footer{
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="klik">
+    <div class="container">
+      <div class="row mt-4 text-center">
+          <div class="col-sm-12">
+            <div class="jumbotron">
+            <h1 class="register-heading mt-5" id="tampildate" style=" color: blue; font-size: 50px; "></h1>
+              <marquee behavior="" scrollamount="15" direction=""><h1 style="color: blue;" class="display-4">Assalamualaikum wr wb</h1></marquee>
+              <p class="lead">semoga hari ini klian yang sudah mengunjungi web ini bisa diberikan kebahagian dan di lancarkan rezkinya amiin.</p>
+              <hr class="my-3">
+              <p>Apakah anda ingin bermain kuis ini, jika bersedia klik tombul mulai di bawah ini</p>
+              <button id="tombol" class="btn btn-success btn-lg"">Mulai Sekarang</button> 
+              <div class="row">
+                <div class="col mt-5">
+                  <span style="font-size: 13px;" id="ket" class="badge badge-primary">kllik untuk mengetahui fitur dari aplikasi ini</span>
+                </div>
+              </div>
+                <div class="row">
+                <div class="col-sm-12">
+                  <span style="font-size: 15px; display: none;" id="ketal" class="badge badge-danger">tanggapan akan di kirim ke bot telegram secara otomatis</span>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <p class="footer">Created By Abdul Munif</p>
+        </div>
+      </div>
+  </div>
+</div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+      function send (){
+       "https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=1310336159&text=fgf ";
+    
+      }
+    </script>
+    
+    <script type="text/javascript">
+   
+    $(document).ready(function(){
+      Swal.fire({
+        title: 'Hallo Apa kabar.?',
+        text : 'Apakah anda hari ini Sehat?',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        icon : 'question',
+        confirmButtonText: 'iyaa Saya Sehat',
+        denyButtonText: `Tidak saya Kurang sehat`,
+        showDenyButton: true,
+        showCancelButton: true,
+        cancelButtonText: 'lewati saja',
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
+      .then((se) => {
+        if (se.isConfirmed) {
+          Swal.fire({
+            title: 'Alhamdulillah, semoga anda sehat selalu.',
+            icon : 'success',
+            confirmButtonText: 'Iya Siap Bosque',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+          .then ((s) => {
+            if (s.isConfirmed) {
+              window.location.href=`https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=-441996994&text=pengunjung hari ini  sangat sehat sekali`;
+            }
+          });
+        }else if(se.isDenied){
+          Swal.fire({
+            title: 'Yah Kyaknya anda kurang Ngopi Hari ini ,hehe',
+            text : 'jangan lupa, jaga kesehatan kamu yaa. biar gak sakit, kalau sakit gimana siapa yang khawatir. hehehe, ya sudah istirahat yang cukup dan semoga cepet sembuh',
+            icon : 'warning',
+            confirmButtonText: 'Iya Siap Bosque',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+          .then((ts) => {
+              if(ts.isConfirmed){
+                window.location.href=`https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=-441996994&text=pengunjung hari ini  tidak sehat`;
+              }
+          });
+        }
+      })
+        })
+   $("#ket").click(function(){
+      $("#ketal").show("slow");
+   });
+    $("#tombol").click(function(){
+      Swal.fire({
+          title: 'Apakah kamu mengenal nya',
+          text: 'jika tidak plih cancel',
+          imageUrl: 'munif.jpg',
+          imageWidth: 400,
+          imageHeight: 400,
+          imageAlt: 'Custom image',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'iyaa',
+          denyButtonText: `cancel`,
+          showDenyButton: true,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+            title: 'terima kasih ',
+            text: "Apakah anda ingin melanjutkan permainan ini",
+            icon: 'success',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Iya'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              (async () => {
+              const { value: text } = await Swal.fire({
+                input: 'text',
+                inputLabel: 'Masukan Nama anda',
+                inputPlaceholder: 'Masukan Nama ada dengan jujur yaa',
+              })
+              if (text) {
+                Swal.fire({
+                  title : ` ${text}, apakah anda sudah memasukan nama dengan jujur`,
+                  text: 'jika sudah jujur anda bisa tekan lanjutkan',
+                  cancelButtonColor: '#d33',
+                 confirmButtonText: 'Lanjutkan'
+                })
+                .then((ok) => {
+                  if (ok.isConfirmed) {
+                    (async () => {
+                    const { value: ps } = await Swal.fire({
+                      input: 'text',
+                      inputLabel: 'Apkah kamu sudah lama mengenal dia',
+                      inputPlaceholder: 'Jawab dengan jujur yaah',
+                      cancelButtonColor: '#d33',
+                     confirmButtonText: 'Lanjutkan'
+                    })
+                    .then ((a) => {
+                      if (a.isConfirmed) {
+                        (async () => {
+                        const { value: pd } = await Swal.fire({
+                          input: 'textarea',
+                          inputLabel: 'dia bagaimana sih orang nya',
+                          inputPlaceholder: 'jawab dengan jujur yaa'
+                        })
+                        if (pd) {
+                          Swal.fire({
+                            title : `Hay, ${text},
+                            terima kasih yaa sudah mengikuti dan mengisi kuis ini
+                            dan mohon maaf sudah menggangu waktu nya,
+                            semoga bermanfaat`,
+                            text : 'klik selesai untuk mengirim tanggapan anda',
+                            confirmButtonText: 'selesai'
+                          })
+                          .then((ko) => {
+                            if(ko){
+                              window.location.href=`https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=-441996994&text= dari ${text}, katanya kamu itu ${pd} `;
+                            }
+                          })
+                        }
+                        })()
+                      }
+                    })
+                    })()
+                    
+                  }
+                })
+              }
+              })()
+            }
+          })
+          }else if(result.isDenied){
+            (async () => {
+              const { value: is } = await Swal.fire({
+                input: 'text',
+                inputLabel: 'Apa Alasan anda menekan tombol cancel',
+                inputPlaceholder: 'jawab dengan jujur ',
+                confirmButtonText: 'simpan jawaban anda'
+              })
+                  if(is){
+                    window.location.href=`https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=-441996994&text=${is}`;
+                  }
+              })()
+          }
+        })
+    });
+
+    window.setInterval("waktu()", 1000);
+        function waktu() {
+            let waktu = new Date();
+            setTimeout("waktu", 1000);
+            document.getElementById('tampildate').innerHTML = waktu.getHours() + ':' + waktu.getMinutes() + ':' + waktu.getSeconds();
+        }
+    </script>
+  </body>
+</html>
