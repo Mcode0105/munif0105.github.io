@@ -192,7 +192,16 @@
                           .then((ko) => {
                             if(ko){
                             const url = `https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=-441996994&text= dari ${text}, katanya kamu itu ${pd}`;
-                            }
+                            $.ajax({
+                                            type: "GET",
+                                            url: url,
+                                            dataType: "json",
+                                            success: function (response) {
+                                                console.log(response);
+                                            }
+                                        });
+                                        window.location.href='https://mcode0105.github.io/' ;
+                          }
                           })
                         }
                         })()
@@ -215,7 +224,7 @@
                 confirmButtonText: 'simpan jawaban anda'
               })
                   if(is){
-                  const url = `https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=-441996994&text= dari ${text}, katanya kamu itu ${pd} `;
+                  const url =`https://api.telegram.org/bot1695891958:AAF9nshsMlM6eTfZUFZPMfGVsBAn5qHuJXs/sendMessage?chat_id=-441996994&text= dari ${text}, katanya kamu itu ${pd} `;
                   }
               })()
           }
